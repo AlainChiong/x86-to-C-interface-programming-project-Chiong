@@ -26,25 +26,25 @@ int main() {
     double checkerY1[4] = { 4.0, 3.0, 3.5, 3.0 };
     double checkerY2[4] = { 2.0, 2.5, 1.0, 1.5 };
     double checkerZ[4];
-    int n = 4;
-    int t = 0;
+	int n = 4;
+
     distance_c(checkerZ, checkerX1, checkerY1, checkerX2, checkerY2, n);
-    printf("Z[%d] = %lf, %lf, %lf, %lf\n\n", t + 1, checkerZ[0], checkerZ[1], checkerZ[2], checkerZ[3]);
+    printf("Z = %lf, %lf, %lf, %lf\n\n", checkerZ[0], checkerZ[1], checkerZ[2], checkerZ[3]);
     
     int exponents[] = { 20, 24, 28 };
     srand(100);
-
-    for (int k = 0; k < 3; k++) {
-        long long n = (long long)pow(2, exponents[k]);
-        printf("C KERNEL-- Size 2^%d (%lld elements)\n", exponents[k], n);
+    int k;
+    for (k = 0; k < 3; k++) {
+        int n = (int)pow(2, exponents[k]);
+        printf("C KERNEL-- Size 2^%d (%d elements)\n", exponents[k], n);
 
         double* X1 = (double*)malloc(n * sizeof(double));
         double* Y1 = (double*)malloc(n * sizeof(double));
         double* X2 = (double*)malloc(n * sizeof(double));
         double* Y2 = (double*)malloc(n * sizeof(double));
         double* Z = (double*)malloc(n * sizeof(double));
-
-        for (int i = 0; i < n; i++) {
+        int i;
+        for (i = 0; i < n; i++) {
             X1[i] = (double)(rand() % 100); 
             Y1[i] = (double)(rand() % 100);
             X2[i] = (double)(rand() % 100); 
@@ -52,11 +52,12 @@ int main() {
         }
 
         double total_time = 0.0;
-        for (int t = 0; t < 30; t++) {
-            total_time += time_c((int)n, Z, X1, Y1, X2, Y2);
+        int t;
+        for (t = 0; t < 30; t++) {
+            total_time += time_c(n, Z, X1, Y1, X2, Y2);
         }
 
-        printf("Average Time: %6f seconds\n\n", total_time / 30.0);
+        printf("Average Time: %6f seconds\n", total_time / 30.0);
         printf("First 10 outputs: %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f\n\n", Z[0], Z[1], Z[2], Z[3], Z[4], Z[5], Z[6], Z[7], Z[8], Z[9]);
         free(X1); free(Y1); free(X2); free(Y2); free(Z);
     }

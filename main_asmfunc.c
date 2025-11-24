@@ -52,8 +52,7 @@ int main() {
         }
 
         printf("Average Time: %6f seconds\n\n", total_time / 30.0);
-        printf("First 10 outputs: %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f\n\n",
-            Z[0], Z[1], Z[2], Z[3], Z[4], Z[5], Z[6], Z[7], Z[8], Z[9]);
+        printf("First 10 outputs: %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f\n\n", Z[0], Z[1], Z[2], Z[3], Z[4], Z[5], Z[6], Z[7], Z[8], Z[9]);
 
         free(X1); free(Y1); free(X2); free(Y2); free(Z);
     }

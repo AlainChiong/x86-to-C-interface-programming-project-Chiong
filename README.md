@@ -1,5 +1,7 @@
 # x86-to-C-interface-programming-project-Chiong
 
+By: Alain Timothy T. Chiong
+
 **Comparative Execution Time**
 The following data was collected by averaging 30 execution runs for each vector size.
 

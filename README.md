@@ -35,7 +35,10 @@ The x86-64 Assembly kernel consistently outperformed the C kernel across all vec
 ## Screenshots
 
 ### C Kernel Output
-![C Output](PLACE_IMAGE_LINK_HERE)
+![C Output](C_output.png)
 
 ### ASM Kernel Output
-![ASM Output](PLACE_IMAGE_LINK_HERE)
+![ASM Output](Asm_output.png)
+
+## Video
+https://drive.google.com/file/d/1BUuwMohw7VQuNapA1WeYP2DHrKgUjCQO/view?usp=sharing
